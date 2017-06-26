@@ -45,7 +45,7 @@
                             /* padding-top: 0px; */
                             align-items: center;
                         ">
-        <i class="fa fa-times icon "  aria-hidden="true"></i>
+        <i class="fa fa-times lg icon "  aria-hidden="true"></i>
       </div>            
       <div class="menu_content">    
         <a href="#"> COLLECTION </a>
