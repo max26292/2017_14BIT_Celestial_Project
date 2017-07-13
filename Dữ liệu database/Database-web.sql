@@ -1,6 +1,7 @@
-﻿USE WEB_PM
+﻿
 
 create database WEB_PM
+USE WEB_PM
 CREATE TABLE web_user (
   id int NOT NULL  identity(1,1) ,
   name varchar(50)  NOT NULL,
