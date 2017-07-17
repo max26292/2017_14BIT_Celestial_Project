@@ -75,9 +75,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`trans_id`, `orders_id`, `product_id`, `orders_qty`, `orders_amount`, `orders_data`, `orders_status`) VALUES
-(1, 1, 'IP001s', 1, '1.0000', 'Iphone 7 plus 32GB', 1),
-(2, 2, 'IP203', 1, '1.0000', 'Sony Xperia X', 1);
+
 
 -- --------------------------------------------------------
 
