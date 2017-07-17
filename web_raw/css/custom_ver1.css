@@ -1,0 +1,86 @@
+/*navbar
+-------------------------------------------------------------*/
+.navbar-inverse.ischanged{
+  width:auto;
+  position: relative;
+  /*background-color: #b3ff66;*/
+  background-color:  #111;
+ /* border-bottom: 3px #080808 solid;*/
+}
+.navbar.fixed{
+  margin-bottom: 0px;
+  min-height: 40px;
+}
+.menu_icon{
+  float: left;
+  padding-left: 10px;
+  padding-top: 5px;
+  color: white;
+}
+.icon:hover{
+  background-color: #3b5998;
+  
+}
+.cart_icon{
+  float: right;
+  padding-right: 10px;
+  padding-top: 5px;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  color: white;
+}
+.cart_icon p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  align-items: center;
+  flex: auto;
+  width: 40px;
+  height: 50px;
+  float: left;
+  line-height: 50px;
+  white-space: nowrap;
+}
+.logo{
+  width: 50px;
+  height: 50px;
+  margin:0 auto;
+  background-color: white;
+}
+/*meubar
+-------------------------------------------------------------------*/
+.menu_bar{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+ /* border: none;*/
+}
+.menu_bar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu_content{
+  padding-top: 10em;
+}
+.menu_content a:hover{
+   background-color: #3b5998;
+}
+/*LOGIN form 
+---------------------------------------------------------------------*/
+.login_form{
+  display: none;
+}
