@@ -20,6 +20,7 @@
   <body>
     <?php  
       include 'function/connect.php';
+      include 'function/functions.php';
     ?>
     <div class="navbar fixed navbar-inverse ischanged navbar-fixed-top ">
       <!-- icon menu -->
@@ -51,7 +52,11 @@
         <i class="fa fa-times lg icon "  aria-hidden="true"></i>
       </div>            
       <div class="menu_content">    
-        <a href="#"> COLLECTION </a>
+        <a href="#" id="calatog_list"> COLLECTION </a>
+        <div class="calatog_list" style="display: none;">
+          <?php get_catalog_items(); ?>
+        </div>
+        
         <a href="#">CONTACT US </a>
         <a href="#"> PORTFORLIO </a>
         <a href="#" id="login_form">LOGIN </a>
@@ -70,7 +75,22 @@
         </div>
       </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
+
+    <!-- -------------------------------div content---------------------------------------------- -->
+    <div class="container main_body" id="content">
+      
+    </dir>
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
