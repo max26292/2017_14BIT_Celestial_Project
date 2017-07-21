@@ -77,12 +77,16 @@
     </div>
 
     <!-- -------------------------------div content---------------------------------------------- -->
-    <div class="container main_body" id="content">
+    <input type="button" id="test" value="co cai c y"> </input>
+    <div class="sub_body">
+      
+    </div>
+    <div class="container main_body" id="content" name="content">
       
     </dir>
 
 
-
+    
 
 
 

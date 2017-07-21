@@ -54,7 +54,7 @@
 				?>
 		
 				<div class="col-xs-12 col-lg-4">
-					<img class="img-thumbnail" width="200px" height="200px" src='data:image;base64,<?php echo $row["product_image"];?>'>
+					<img class="img-thumbnail" width="300px" height="350px" src='data:image;base64,<?php echo $row["product_image"];?>'>
 				</div>
 				
 				

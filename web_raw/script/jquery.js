@@ -4,14 +4,14 @@ $(document).ready(function() {
     $(".menu_bar").width("250px");
     $(".menu_icon").css('display','none');
     $(".main_body").animate({
-        'marginLeft' : "+=150px" //moves right
+        'marginLeft' : "+=250px" //moves right
         });
   	});
   $('#cls_bt').click(function () {
     $(".menu_bar").width("0px");
     $(".menu_icon").css('display','block');
     $(".main_body").animate({
-        'marginLeft' : "-=150px" //moves left
+        'marginLeft' : "-=250px" //moves left
         });
 	});
   //--------------------login function ---------------------------------
@@ -97,6 +97,9 @@ $(document).ready(function() {
     });
   });
   
-
+  // cast background function------------------------
+  $('#test').click(function(){
+    $('.content').toggleClass("sub_body");
+  });
 });
 

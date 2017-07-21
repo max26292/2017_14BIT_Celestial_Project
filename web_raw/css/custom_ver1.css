@@ -88,11 +88,31 @@
 /*main_body
 ------------------------------------------*/
 .main_body{
-  width: 1100;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  /*width: 1100;*/
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .row_space{
   margin-bottom: 30px;
+}
+.sub_body{
+  background-color:  rgba(1, 1, 19, 0.63);
+  color: black;
+  width: 1200px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+    /*background-color: black;*/
+  /*display: none;*/
+
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
 }
