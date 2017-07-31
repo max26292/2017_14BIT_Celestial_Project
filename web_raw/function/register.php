@@ -225,7 +225,7 @@ end:
 // echo $check;
 // //$user->test();
 // // echo $user->test();
- $_POST = array();
+unser($_POST);
 //   if($check == 1)
 //   {
 //     unset($user);

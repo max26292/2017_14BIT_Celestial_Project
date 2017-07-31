@@ -152,6 +152,8 @@ if(!isset($_SESSION['user_name']))
               if($conn->query($query)!== false)
               {
                 $message="thanh toan thanh cong";
+                $_SESSION['trans_id']= gen_tran_id();
+                set_trans($_SESSION['user_id'],$_SESSION['trans_id']);
               }
               //$message="thanh toan thanh cong";
             }
@@ -203,12 +205,13 @@ if(!isset($_SESSION['user_name']))
 <div class="checked">
 
 </div>
-<?php var_dump($_SESSION);
-echo "<br>";
-  var_dump($_POST);
-  echo "<br>";
-  echo $query;
-unset($_POST);
+ <?php 
+// var_dump($_SESSION);
+// echo "<br>";
+//   var_dump($_POST);
+//   echo "<br>";
+//   echo $query;
+// unset($_POST);
  ?>
 
 

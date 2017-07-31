@@ -111,7 +111,9 @@ else {
     </div>
 
 
-<?php var_dump($_SESSION) ?>
+<?php 
+// var_dump($_SESSION) ;
+?>
 
 <div id="checked">
 
