@@ -9,7 +9,7 @@ $pw = 'h260292';
 
 
 $conn = new mysqli($host, $user, $pw, $db);
-
+mysqli_set_charset($conn, 'UTF8');
 // if ($conn->connect_errno == 0) {
 //   echo "Connection successful!";
 // } else {

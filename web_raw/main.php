@@ -1,11 +1,21 @@
 <?php session_start();
-if(isset($_SESSION['user_name']))
+
+  include 'function/connect.php';
+  include 'function/functions.php';
+
+if(!isset($_SESSION['user_name']))
 {
-    header('Location: main.php');
+    header('Location: index.php');
 }
+else {
+  # code...
+  if (!isset($_SESSION['trans_id']))
+  {
+    $_SESSION['trans_id']= gen_tran_id();
+    set_trans($_SESSION['user_id'],$_SESSION['trans_id']);
+  }
 
-
-
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,11 +39,7 @@ if(isset($_SESSION['user_name']))
     <![endif]-->
   </head>
   <body>
-    <?php
-      // include 'function/connect.php';
-      include 'function/functions.php';
-      include 'function/class.php'
-    ?>
+
     <div class="navbar fixed navbar-inverse ischanged navbar-fixed-top ">
       <!-- icon menu -->
       <div class="menu_icon ">
@@ -44,7 +50,7 @@ if(isset($_SESSION['user_name']))
 
       <!--cast menu  -->
       <div class="cart_icon icon">
-        <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
+        <a href="function/pay.php"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i><span class="badge">42</span></a>
         <p class="text">Cart</p>
       </div>
       <!-- Icon of shop -->
@@ -53,7 +59,8 @@ if(isset($_SESSION['user_name']))
       </div>
     </div>
     <div class="menu_bar">
-    <!-- <div id="cls_bt" style="
+    <div id="cls_bt" style="
+                            color: white;
                             float: right;
                             padding-right: 15px;
                             /* padding-bottom: 5px; */
@@ -62,7 +69,7 @@ if(isset($_SESSION['user_name']))
                             align-items: center;
                         ">
         <i class="fa fa-times lg icon "  aria-hidden="true"></i>
-      </div>  -->
+      </div>
       <div class="menu_content">
         <a href="#" id="calatog_list"> COLLECTION </a>
         <div class="calatog_list" style="display: none;">
@@ -72,64 +79,25 @@ if(isset($_SESSION['user_name']))
         <a href="#">CONTACT US </a>
         <a href="#"> PORTFORLIO </a>
 
-        <a href="#" id="login_form">LOGIN </a>
 
-        <!-- login function -->
-        <?php
-
-        $user= new user();
-        $message="";
-        if((isset($_POST['login']) && empty($_POST['user_mail']))||(isset($_POST['login'])&& empty($_POST['user_pass'])))
-        {
-          $message = "Please enter email and Password!!";
-        }
-
-        if(isset($_POST['login']) && !empty($_POST['user_mail']) && !empty($_POST['user_pass']))
-        {
-          $mail = $_POST['user_mail'];
-          $pass = $_POST['user_pass'];
-          // echo $pass;
-          $pass = md5($pass);
-          if(login_checked($mail,$pass) == true)
-          {
-            //
-            $user->get_user($mail);
-            $_SESSION['user_name']=$user->get_name();
-            $_SESSION['user_mail']=$user->get_mail();
-            $_SESSION['user_id']=$user->get_id();
-            $_SESSION['user_role']=$user->get_role();
-            header('Location: main.php');
-          }
-          else{
-            $message ="Wrong email or password";
-
-          }
-
-
-        }
-
-         ?>
-
-        <!-- login form -->
+        <a href="#" id="login_form">User control panel </a>
         <div id="login">
           <div class="login_form">
-            <form  method="post">
-              <div class="error-message-box"><?php if(isset($message)) { echo $message; } ?></div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="user_mail"class="form-control" id="exampleInputEmail1" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="user_pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div>
-              <input type="submit" name="login" class="btn btn-default" value="Login"/>
-              <button type="button" class="btn btn-default" onclick="window.location.href='function/register.php'">Register</button>
-
-            </form>
-
-          </div>
+        <!-- login function -->
+            <div class="user_info">
+              <h5> <?php
+                echo "User name: ".$_SESSION['user_name'];
+               ?>
+             </h5>
+             <div class="btn-group" role="group">
+             <button type="button" class="btn btn-default" onclick="window.location.href='function/register.php'">Control panel</button>
+             <button type="button" class="btn btn-default" onclick="window.location.href='function/logout.php'">Logout</button>
+           </div>
+           </div>
         </div>
+      </div>
+        <!-- login form -->
+
 
       </div>
     </div>
@@ -137,28 +105,27 @@ if(isset($_SESSION['user_name']))
 
     <!-- -------------------------------div content---------------------------------------------- -->
 <!--     <input type="button" id="test" value="test"> </input> -->
-  <?php
-  if(isset($alert)&& $error<>"")
-  {
-    echo "<script type='text/javascript'>alert('.$alert.');</script>";
-  }
-   ?>
+
     <div class="container main_body" id="content" >
       <?php index_logo(); ?>
     </div>
 
 
+<?php var_dump($_SESSION) ?>
 
+<div id="checked">
 
+</div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="bootstrap.3.3.7\content\Scripts\bootstrap.min.js" type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="script\jquery.js" type="text/javascript"></script>
+    <script>jQuery.noConflict();</script>
 
   </body>
 </html>
